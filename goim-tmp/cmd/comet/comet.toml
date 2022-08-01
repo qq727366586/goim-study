@@ -1,0 +1,30 @@
+# 服务发现
+[discovery]
+    nodes = ["127.0.0.1:7171"]
+# tcp
+[tcp]
+    bind = [":3101"]
+    sndbuf = 4096 # 4 * 1024
+    rcvbuf = 4096 # 4 * 1024
+    keepalive = false # keepalive
+    reader = 32 # reader数量
+    readBuf = 1024 # read buffer的大小
+    writer = 32 # wirter数量
+    writeBuf = 1024 # write buffer的大小
+    writeBufSize = 8192 # write buffer的长度 8 × 1024
+
+# websocket
+[websocket]
+    bind = [":3102"]
+    tlsOpen = false
+    tlsBind = [":3103"]
+    certFile = "../../cert.pem"
+    privateFile = "../../private.pem"
+
+# bucket
+[bucket]
+    size = 32 # 长度
+    channel = 1024 # channel数量
+    room = 1024 # room数量
+    routineAmount = 32 # x程总数
+    routineSize = 1024 # x程长度
