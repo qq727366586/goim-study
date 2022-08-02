@@ -38,7 +38,10 @@ type Reader struct {
 	err  error
 }
 
+// 最小缓冲区读的大小
 const minReadBufferSize = 16
+
+// 最大连续空读
 const maxConsecutiveEmptyReads = 100
 
 // NewReaderSize returns a new Reader whose buffer has at least the specified
